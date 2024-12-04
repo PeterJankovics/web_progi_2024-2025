@@ -1,0 +1,84 @@
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  height: 1000px;
+
+}
+
+.kep
+{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 40px;
+
+}
+
+.kep1
+{
+  width: 1689px;
+  height: 650px;
+  padding-left: 200px;
+}
+
+.kep2
+{
+  float: right;
+  width: 20%;
+  height: 20%;
+}
+.kep3
+{
+  float: right;
+  width: 20%;
+  height: 20%;
+}
+.kep4
+{
+  float: right;
+  width: 20%;
+  height: 20%;
+}
+body
+{
+  background-color: lightgray;
+}
+
+.focim
+{
+  position: absolute;
+  top: 480px;
+  color: white;
+  font-size: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+

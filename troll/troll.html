@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>Troll vagyokk</title>
+    <style>
+        button{
+            display: block;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button onfocus="ranyom()">nyommeg</button>
+    <script>
+        function ranyom()
+        {
+            let gomb = document.querySelector("button");
+            gomb.addEventListener("mouseover", valtozik);
+        function valtozik()
+        {
+            let i = Math.floor(Math.random()*500)+1;
+            let j = Math.floor(Math.random()*500)+1;
+            gomb.style.left = i+"px";
+            gomb.style.top = j+"px";
+        }
+        }
+            //document.getElementById("gomb").style.margin = Math.floor(Math.random() * 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <title>Projekt</title>
+</head>
+
+<body>
+
+    <p id="demo"></p>
+        
+
+<button onclick="gombos()">Nyomj meg</button>
+
+<button onclick="gombos2()">Nyomj meg</button>
+
+<p id="szep"></p>
+<p id="valaszto"></p>
+<script>
+    function gombos()
+    {
+       /*  var keszit = document.createElement("textarea");
+        var hello = document.createElement("textarea");
+        keszit.appendChild(hello);
+        var csa = document.getElementById("szep");
+        csa.appendChild(keszit); */
+        var a = 0;
+            var mousePosition;
+            var offset = [0, 0];
+            var button;
+            var isDown = false;
+
+            button = document.createElement("textarea");
+            button.style.position = "absolute";
+            button.style.left = "0px";
+            button.style.top = "0px";
+            button.style.width = "100px";
+            button.style.height = "50px";
+            button.style.background = "red";
+            button.style.color = "blue";
+
+
+            document.body.appendChild(button);
+
+            button.addEventListener('mousedown', function (e) {
+                isDown = true;
+                offset = [
+                    button.offsetLeft - e.clientX,
+                    button.offsetTop - e.clientY
+                ];
+            }, true);
+
+            document.addEventListener('mouseup', function () {
+                isDown = false;
+            }, true);
+
+            document.addEventListener('mousemove', function (event) {
+                event.preventDefault();
+                if (isDown) {
+                    mousePosition = {
+
+                        x: event.clientX,
+                        y: event.clientY
+
+                    };
+                    button.style.left = (mousePosition.x + offset[0]) + 'px';
+                    button.style.top = (mousePosition.y + offset[1]) + 'px';
+                }
+            }, true);
+    }
+
+    function gombos2()
+    {
+        var keszit = document.createElement("select");
+        var hello = document.createElement("option");
+        var hello2 = document.createElement("option");
+        keszit.appendChild(hello);
+        keszit.appendChild(hello2);
+        var csa = document.getElementById("valaszto");
+        csa.appendChild(keszit);
+    }
+
+
+        /*function init()
+        {
+            document.body.appendChild(x("textarea", 2, 5))
+        }
+
+
+        function textarea(id, x, y) {
+            let x = document.createElement("textarea");
+            x.setAttribute("rows", "cols");
+            x.setAttribute("x", x);
+            x.setAttribute("y", y);
+            x.id = id;
+            x.addEventListener(input, merete);
+            return x;
+        }
+        function merete()
+        {
+            let label = document.createElement("label")
+            const x = document.getElementById(x)
+        }*/
+    </script>
+
+
+</body>
+
+</html>

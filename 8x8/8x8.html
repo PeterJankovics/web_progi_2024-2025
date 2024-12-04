@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+</head>
+<body onload="tablazat()" class="tablazat">
+<script>
+    function tablazat(){
+        let szam = 8;
+        let tabla = document.createElement("table");
+        let tablatest = document.createElement("tbody");
+        for(let i = 0; i < szam; i++)
+        {
+        let sor = document.createElement("tr");
+        for (let k = 0; k < szam; k++)
+        {
+            let cella = document.createElement("td");
+            sor.appendChild(cella);
+        }
+        tabla.appendChild(sor);
+        }
+        tabla.appendChild(tablatest);
+        document.body.appendChild(tabla);
+    }
+    
+    let cella = document.getElementsByTagName("td");
+    onclick="ranyom()";
+    function ranyom(){
+        let i= 0;
+        while(cell[i] != undefined){ 
+            prompt(cell[i].innerHTML);
+            i++;
+            }
+    }
+
+</script>
+
+<style>
+    td{
+        width: 100px;
+        height: 100px;
+        border: 2px solid red;
+    }
+</style>
+</body>
+</html>

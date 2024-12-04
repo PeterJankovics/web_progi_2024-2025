@@ -1,0 +1,68 @@
+<!--ket beviteli lehetoseg, ami tortenjen 1-20 ig 
+olyan megjelenitett tablazat szeru dolgot ami a (szorzotabla szeruseg) 
+ahogy valtoztatom a beviteli lehetoseget ugy valtozzon a megjelenitett resz.-->
+
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  
+    <title>szorzotabla</title>
+</head>
+<body>
+    <form oninput="szamol()">
+        <label for="text" id="oszlop">OSZLOPOK: </label>
+        <input type="range" min="1" max="20" id="elso" value="2"><br><br>
+        <label for="text" id="sor">SOROK: </label>
+        <input type="range" min="1" max="20" id="elso" value="4"><br><br>
+    </form>
+    <table id="tabla">
+
+    </table>
+    
+    <script>
+        function szamol()
+        {
+            let tablazat = document.getElementById("tabla")
+            let oszlopok = document.getElementById("oszlop").value;
+            let sorok = document.getElementById("sor").value;
+
+            for (let i = 1; i <= oszlopok; i++)
+            {
+               let hozzaadoszlop = document.createElement("tr");
+               for (let k = 1; k <= sorok; k++)
+                    {
+                       let hozzaadsor = document.createElement("td");
+                        hozzaadsor.innerHTML = i * k;
+                        tablazat.appendChild(hozzaadsor);
+                    }
+                    tablazat.appendChild(hozzaadoszlop);
+            }          
+        }
+
+        /*function myFunction() {
+            
+        
+        let x = document.createElement("TABLE");
+        x.setAttribute("id", "tabla");
+        document.body.appendChild(x);
+
+        let y = document.createElement("TR");
+        y.setAttribute("id", "tr");
+        document.getElementById("tabla").appendChild(y);
+
+        let z = document.createElement("TD");
+        let szam = 0;
+        
+        
+        let t = document.createTextNode(szam + 1);
+        
+        z.appendChild(t);
+        document.getElementById("tr").appendChild(z);
+        
+        
+        }*/
+    </script>
+
+</body>
+</html>

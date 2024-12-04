@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>fajl</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        h2{
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        //megcsinaljuk a httprequestet;
+        const hivas = new XMLHttpRequest();
+        //callback function elkeszitese;
+        hivas.onload = function()
+        {
+            console.log(this.responseText);
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            let doboz = nevjegy(data.results[0]);
+            document.body.appendChild(doboz);
+            
+        }
+        // az open;
+        hivas.open("GET", "https://randomuser.me/api/");
+        //elkuldjuk a szervernek;
+        hivas.send();
+        function nevjegy(adatok)
+        {
+            let tartaly = document.createElement("div");
+            const kep = document.createElement("img");
+            kep.src = adatok.picture.large;
+            document.body.appendChild(kep);
+            let nev = document.createElement("h2");
+            nev.innerHTML = adatok.name.title + " " + adatok.name.first + " " + adatok.name.first;
+            document.body.appendChild(nev);
+            tartaly.appendChild(nev);
+            let lista = document.createElement("li");
+            lista.innerHTML
+            return tartaly;
+        }
+        
+    </script>
+</body>
+</html>

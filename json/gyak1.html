@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+
+    <div class="kartya">
+
+    </div>
+
+    <!--
+    8ivncre2l6kp0c9ugq4qptas3uz9gi07t5r1qu59
+    https://api.json-generator.com/templates/0k_l9o78TywV/data
+    -->
+
+    <script>
+        let url = "https://api.json-generator.com/templates/3yV8QTYvsXPb/data";
+        let token = "i54uith88y6eumr215ca24hq95rk15q8npkcbg2i";
+        function init() {
+            letoltes();
+
+        }
+
+        function letoltes() {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+
+                const adatok = JSON.parse(this.responseText);
+                //console.log(adatok);
+                card(adatok[0]);
+
+            }
+            xhr.open("GET", url + "?access_token=" + token);
+            xhr.send();
+
+        }
+
+        function card(adatList) {
+            console.log(adatList);
+            const keret = document.createElement("div");
+
+            const nevKeret = document.createElement("div");
+            const nevSpan = document.createElement("span");
+            nevSpan.innerHTML = "Név: ";
+            const nevAdat = document.createElement("span");
+            nevAdat.innerHTML = adatList.profile.name;
+            nevKeret.appendChild(nevSpan);
+            nevKeret.appendChild(nevAdat);
+            keret.appendChild(nevKeret);
+            //document.body.appendChild(keret);
+
+            const email = document.createElement("div");
+            const emailSpan = document.createElement("span");
+            emailSpan.innerHTML = "Email: ";
+            const emailadat = document.createElement("span");
+            emailadat.innerHTML.adatList.email;
+            email.appendChild(emailSpan);
+            email.appendChild(emailadat);
+            keret.appendChild(email);
+
+            document.body.appendChild(keret);
+            
+        }
+
+    </script>
+</body>
+
+</html>

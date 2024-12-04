@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>tablazat</title>
+    <style>
+        .tablazat
+        {
+            width: 40px;
+            height: 40px;
+            
+        }
+
+    </style>
+</head>
+<body onload="tablazat()" class="tabla">
+
+    <script>
+        function tablazat() {
+
+    const tabla = document.createElement("table");
+    const tablatest = document.createElement("tbody");
+
+
+    for (let i = 0; i < 10; i++) {
+
+        const sor = document.createElement("tr");
+
+        for (let j = 0; j < 10; j++) {
+
+        const cella = document.createElement("td");
+        cella.classList.add("tablazat");
+        cella.onclick=rakattint()
+        sor.appendChild(cella);
+        }
+
+
+        tablatest.appendChild(sor);
+    }
+
+
+    tabla.appendChild(tablatest);
+
+    document.body.appendChild(tabla);
+
+    tabla.setAttribute("border", "2");
+}
+
+function rakattint()
+{
+    
+}
+    </script>
+</body>
+</html>

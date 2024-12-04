@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rögzített bal oldali linkek</title>
+    <style>
+        /* Rögzített bal oldali menü */
+        .left-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px; /* Menüpontok szélessége */
+            height: 100%; /* Magasság a teljes oldalon */
+            background-color: #f4f4f4; /* Háttérszín */
+            padding: 20px; /* Padding a menü körül */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Árnyék */
+        }
+
+        .left-menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 10px;
+            background-color: #e4e4e4;
+            border-radius: 5px;
+        }
+
+        .left-menu a:hover {
+            background-color: #ccc;
+        }
+
+        /* A tartalom */
+        .content {
+            margin-left: 220px; /* Bal oldali menü mellett */
+            padding: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bal oldali menü -->
+    <div class="left-menu">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+    </div>
+
+    <!-- Tartalom -->
+    <div class="content">
+        <h1>Tartalom címe</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia velit nisi, at feugiat risus cursus sed. Cras vel ligula id lorem tincidunt lacinia a vel orci. Nulla facilisi. Sed at justo sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod risus a metus dapibus, non fringilla purus tristique. Ut sit amet sapien tristique, tincidunt lorem non, tincidunt felis.</p>
+        <p>... további tartalom ...</p>
+        <p>... további tartalom ...</p>
+    </div>
+
+</body>
+</html>

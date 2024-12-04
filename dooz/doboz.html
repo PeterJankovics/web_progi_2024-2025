@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>Doboz</title>
+    <style>
+        .elso{
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+        }
+        .masodik{
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+        }
+        .harmadik{
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="elso" id="elso" onclick="kivalaszt()"></div><br>
+    <div class="masodik" id="masodik" onclick="kivalaszt()"></div><br>
+    <div class="harmadik" id="harmadik" onclick="kivalaszt()"></div><br>
+
+    <script>
+        random = Math.floor(Math.random() * 3 + 1);
+        
+
+        function kivalaszt()
+        {
+            if(random == 1)
+        {
+            document.getElementById("elso").style.backgroundColor = "green";
+        }
+        else
+        {
+            document.getElementById("elso").style.backgroundColor = "red"; 
+        }
+        if(random == 2)
+        {
+            document.getElementById("masodik").style.backgroundColor = "green"; 
+        }
+        else
+        {
+            document.getElementById("masodik").style.backgroundColor = "red"; 
+        }
+        if(random == 3)
+        {
+            document.getElementById("harmadik").style.backgroundColor = "green"; 
+        }
+        else
+        {
+            document.getElementById("harmadik").style.backgroundColor = "red"; 
+        }
+    }
+       
+    </script>
+</body>
+</html>
