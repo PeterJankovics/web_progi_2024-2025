@@ -1,5 +1,33 @@
-body
-{
-    background-image: url("galeria/hatter1.svg");
-
+body{
+    background-color: gray;
 }
+
+.kep1{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    animation: felho 5s infinite;
+    border-radius: 25px;
+}
+
+.kep2{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    animation: masik 5s infinite;
+    border-radius: 25px;
+}
+
+@keyframes felho
+{
+    from{top: 350px; left: -500px;}
+    to{top: 350px; left: 400px;}
+}
+
+@keyframes masik
+{
+    from{top: 350px; left: -500px;}
+    to{top: 350px; left: 800px;}
+}
+
+

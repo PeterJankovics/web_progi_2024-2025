@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <title>animacio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+
+
+
+    <script>
+
+        const fs = require('fs');
+        const path = require('path');
+
+        // A mappa elérési útja, amelyből képeket szeretnél beolvasni
+        const folderPath = path.join("./galeria", 'kepek'); // Itt megadhatod a kívánt mappát
+
+        // Olvassuk be a fájlokat a mappából
+        fs.readdir(folderPath, (err, files) => {
+            if (err) {
+                console.log('Hiba történt a mappa beolvasásakor:', err);
+                return;
+            }
+
+            // Szűrjük ki a képfájlokat (pl. .jpg, .png, .gif)
+            const imageFiles = files.filter(file => {
+                const ext = path.extname(file).toLowerCase();
+                return ['.jpg', '.jpeg', '.png', '.gif'].includes(ext); // Képek típusai
+            });
+
+            console.log('Képek:', imageFiles); // Képek listája
+        });
+
+
+    </script>
 </body>
+
 </html>
