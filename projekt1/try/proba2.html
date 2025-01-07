@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,7 @@
             text-align: center;
             font-size: 2em;
             opacity: 0;
-            animation: szoveg 12s infinite;
+            animation: szoveg 24s infinite;
         }
 
         .animation-container {
@@ -38,14 +39,14 @@
         }
 
         .kep {
-            width: 100%;
+            width: 50%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: absolute;
             opacity: 0;
             transform: translateX(-100%);
-            animation: kepek 12s infinite;
+            animation: kepek 24s infinite;
         }
 
         .kep img {
@@ -54,7 +55,7 @@
             object-fit: contain;
         }
 
-        .text-container:nth-child(1) {
+        .text-container0 {
             animation-delay: 0s;
         }
 
@@ -62,7 +63,7 @@
             animation-delay: 0s;
         }
 
-        .text-container:nth-child(2) {
+        .text-container1 {
             animation-delay: 4s;
         }
 
@@ -70,47 +71,97 @@
             animation-delay: 4s;
         }
 
-        .text-container:nth-child(3) {
+        .text-container2 {
             animation-delay: 8s;
         }
 
         .kep:nth-child(3) {
-            animation-delay: 8s;
+            animation-delay: 12s;
         }
 
+        .text-container3 {
+            animation-delay: 16s;
+        }
+
+        .text-container4 {
+            animation-delay: 20s;
+        }
+        .text-container5 {
+            animation-delay: 24s;
+        }
+
+
+
         @keyframes kepek {
-            0% { opacity: 0; transform: translateX(-100%); }
-            10% { opacity: 1; transform: translateX(18%); }
-            30% { opacity: 1; transform: translateX(18%); }
-            40% { opacity: 0; transform: translateX(100%); }
-            100% { opacity: 0; transform: translateX(100%); }
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            10% {
+                opacity: 0.5;
+                transform: translateX(0%);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
         }
 
         @keyframes szoveg {
-            0%, 40% { opacity: 0; }
-            50%, 90% { opacity: 1; }
-            100% { opacity: 0; }
+
+            0%
+            {
+                opacity: 0;
+            }
+            17% {
+                opacity: 1;
+            }
+
+            34%
+            {
+                opacity: 0;
+            }
+            51% {
+                opacity: 1;
+            }
+
+            68% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="text-container">Hunor</div>
-    <div class="text-container">Csongor</div>
-    <div class="text-container">Tomi</div>
+        <div class="text-container">Hunor</div>
+        <div class="text-container1">Csongor</div>
+        <div class="text-container2">Tomi</div>
+        <div class="text-container3">Dani</div>
+        <div class="text-container4">Peti</div>
+        <div class="text-container5">Oliver</div>
 
     <div class="animation-container">
         <div class="kep">
-            <img src="image1.jpg" alt="Image 1">
-            <img src="image2.jpg" alt="Image 2">
+            <img src="galeria/kep1.jpg" alt="Image 1">
+            <img src="galeria/kep2.jpg" alt="Image 2">
         </div>
         <div class="kep">
-            <img src="image3.jpg" alt="Image 3">
-            <img src="image4.jpg" alt="Image 4">
+            <img src="galeria/kep3.jpg" alt="Image 3">
+            <img src="galeria/kep4.jpg" alt="Image 4">
         </div>
         <div class="kep">
-            <img src="image5.jpg" alt="Image 5">
-            <img src="image6.jpg" alt="Image 6">
+            <img src="galeria/kep5.jpg" alt="Image 5">
+            <img src="galeria/kep6.jpg" alt="Image 6">
         </div>
     </div>
 </body>
+
 </html>
