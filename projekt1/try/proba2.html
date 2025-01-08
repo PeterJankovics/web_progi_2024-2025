@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>animacio</title>
+    <title>Animáció</title>
     <style>
         body {
             margin: 0;
@@ -19,15 +19,70 @@
             flex-direction: column;
         }
 
+
         .text-container {
             position: absolute;
             top: 20px;
+            left: -100%;
+            /* Kezdőpont balról kívül */
             width: 100%;
             text-align: center;
             font-size: 2em;
             opacity: 0;
-            animation: szoveg 24s infinite;
+            animation: nevek 42s infinite;
         }
+
+        /* Egyedi késleltetés minden névre */
+        .text-container:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .text-container:nth-child(2) {
+            animation-delay: 7s;
+        }
+
+        .text-container:nth-child(3) {
+            animation-delay: 14s;
+        }
+
+        .text-container:nth-child(4) {
+            animation-delay: 21s;
+        }
+
+        .text-container:nth-child(5) {
+            animation-delay: 28s;
+        }
+
+        .text-container:nth-child(6) {
+            animation-delay: 35s;
+        }
+
+        /* Kulcsfontosságú animáció a nevek kúszásához */
+        @keyframes nevek {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            15% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+
+            35% {
+                opacity: 1;
+                transform: translateX(100%);
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+            
 
         .animation-container {
             position: relative;
@@ -45,95 +100,63 @@
             align-items: center;
             position: absolute;
             opacity: 0;
-            transform: translateX(-100%);
-            animation: kepek 24s infinite;
+            transform: translateX(-300%);
+            animation: kepek 42s infinite;
         }
 
         .kep img {
             width: 48%;
             height: auto;
+            border-radius: 15px;
             object-fit: contain;
         }
 
-        .text-container0 {
-            animation-delay: 0s;
-        }
-
+        /* Egyedi animációs késleltetések */
         .kep:nth-child(1) {
             animation-delay: 0s;
         }
 
-        .text-container1 {
-            animation-delay: 4s;
-        }
-
         .kep:nth-child(2) {
-            animation-delay: 4s;
-        }
-
-        .text-container2 {
-            animation-delay: 8s;
+            animation-delay: 7s;
         }
 
         .kep:nth-child(3) {
-            animation-delay: 12s;
+            animation-delay: 14s;
         }
 
-        .text-container3 {
-            animation-delay: 16s;
+        .kep:nth-child(4) {
+            animation-delay: 21s;
         }
 
-        .text-container4 {
-            animation-delay: 20s;
-        }
-        .text-container5 {
-            animation-delay: 24s;
+        .kep:nth-child(5) {
+            animation-delay: 28s;
         }
 
-
+        .kep:nth-child(6) {
+            animation-delay: 35s;
+        }
 
         @keyframes kepek {
             0% {
                 opacity: 0;
-                transform: translateX(-100%);
+                transform: translateX(-300%);
             }
 
-            10% {
-                opacity: 0.5;
-                transform: translateX(0%);
-            }
-
-            50% {
+            15% {
                 opacity: 1;
                 transform: translateX(0%);
             }
 
-            100% {
+            35% {
                 opacity: 0;
                 transform: translateX(100%);
             }
 
-        }
-
-        @keyframes szoveg {
-
-            0%
-            {
+            50% {
                 opacity: 0;
             }
-            17% {
-                opacity: 1;
-            }
 
-            34%
-            {
-                opacity: 0;
-            }
-            51% {
-                opacity: 1;
-            }
-
-            68% {
+            100% {
                 opacity: 0;
             }
         }
@@ -141,12 +164,12 @@
 </head>
 
 <body>
-        <div class="text-container">Hunor</div>
-        <div class="text-container1">Csongor</div>
-        <div class="text-container2">Tomi</div>
-        <div class="text-container3">Dani</div>
-        <div class="text-container4">Peti</div>
-        <div class="text-container5">Oliver</div>
+    <div class="text-container">Hunor</div>
+    <div class="text-container">Csongor</div>
+    <div class="text-container">Tomi</div>
+    <div class="text-container">Dani</div>
+    <div class="text-container">Peti</div>
+    <div class="text-container">Oliver</div>
 
     <div class="animation-container">
         <div class="kep">
@@ -160,6 +183,18 @@
         <div class="kep">
             <img src="galeria/kep5.jpg" alt="Image 5">
             <img src="galeria/kep6.jpg" alt="Image 6">
+        </div>
+        <div class="kep">
+            <img src="galeria/kep7.jpg" alt="Image 7">
+            <img src="galeria/kep8.jpg" alt="Image 8">
+        </div>
+        <div class="kep">
+            <img src="galeria/kep9.jpg" alt="Image 9">
+            <img src="galeria/kep10.jpg" alt="Image 10">
+        </div>
+        <div class="kep">
+            <img src="galeria/kep11.jpg" alt="Image 11">
+            <img src="galeria/kep12.jpg" alt="Image 12">
         </div>
     </div>
 </body>
