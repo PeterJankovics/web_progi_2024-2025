@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <title>animacio</title>
+    <style>
+        .negyzet {
+
+            vertical-align: middle;
+            background-color: green;
+
+        }
+    </style>
+
+</head>
+
+<body onload="keszit()">
+    <div class="negyzet" id="negyzet">
+        <p id="szamok">1</p>
+    </div>
+
+    <script>
+        
+
+        function keszit() {
+            document.getElementById("negyzet");
+            document.getElementById("szamok");
+
+
+            negyzet.style.width = "100px";
+            negyzet.style.height = "100px";
+
+
+            for (var i=0; i<Infinity; i++)
+        {
+            for (let i = 0; i < 100; i++) 
+            {
+                szamok.innerHTML = i;
+                negyzet.style.width += 10+"px";
+                negyzet.style.height += 10+"px";
+
+            }
+            for (let i = 100; i < 0; i--)
+            {
+                szamok.innerHTML = i;
+                negyzet.style.width -= 10 +"px";
+                negyzet.style.height -= 10 +"px";
+            }
+
+        }  
+    }
+    </script>
+</body>
+
+</html>

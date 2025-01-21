@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <title>tablazat</title>
+    <style>
+                table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div id="tabla"></div>
+
+    <input type="color" id="szin">
+
+    <script>
+
+   $(document).ready(function() {
+        var table = $('<table></table>');
+        
+    
+        for (var i = 0; i < 100; i++) {
+            var row = $('<tr></tr>');
+
+            for (var j = 0; j < 100; j++) {
+                row.append('<td>' + '</td>');
+            }
+            table.append(row);
+        }
+
+        $('#tabla').append(table);
+
+        $('td').click(function() {
+            $(this).css('background-color', szin.value);
+
+        });
+    });
+            
+    </script>
+</body>
+
+</html>
