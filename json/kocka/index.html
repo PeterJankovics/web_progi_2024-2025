@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>animacios kocka</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        #negyzet,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+
+        #negyzet {
+            padding: 50px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+
+
+    <input type="button" value="le" id="legomb">
+    <input type="button" value="fel" id="felgomb">
+    <input type="button" value="bal" id="balragomb">
+    <input type="button" value="jobb" id="jobbragomb">
+
+    <div id="negyzet"></div>
+
+    <script>    
+
+
+        $(document).ready(function () {
+            $("#legomb").click(function () {
+                $("#negyzet").slideDown("slow");
+            });
+        });
+
+
+
+        $(document).ready(function () {
+            $("#felgomb").click(function () {
+                $("#negyzet").slideUp("slow");
+            });
+        });
+
+        $(document).ready(function () {
+            $("#jobbragomb").click(function () {
+                $("#negyzet").animate({width:'toggle'},600);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
