@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <title>tabla</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        td{
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body onload="tablakeszit(100, 100)">
+
+    <script>
+        function tablakeszit(sor, oszlop) {
+            let tabla = jQuery("<table>");
+            for (let i = 0; i < sor; i++) {
+                let tablasor = jQuery("<tr>")
+                for (let k = 0; k < oszlop; k++) {
+                    let tablacella = jQuery("td");
+                    tablacella.html(i*k);
+                    tablacella.click(function()
+                {
+
+                })
+                    tablasor.append(tablacella);
+
+                }
+                tabla.append(tablasor);
+            }
+            $("body").append(tabla);
+        }
+    </script>
+
+</body>
+
+</html>
