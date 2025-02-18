@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animacio</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url("intro-background.jpg");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+            flex-direction: column;
+        }
+
+        .text-container {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            opacity: 0;
+            animation: szoveg 24s infinite;
+        }
+
+        .animation-container {
+            position: relative;
+            width: 80%;
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kep {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: kepek 25s infinite;
+        }
+
+        .kep img {
+            width: 48%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .text-container0 {
+            animation-delay: 0s;
+        }
+
+        .kep:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .text-container1 {
+            animation-delay: 4s;
+        }
+
+        .kep:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        .text-container2 {
+            animation-delay: 8s;
+        }
+
+        .kep:nth-child(3) {
+            animation-delay: 12s;
+        }
+
+        .text-container3 {
+            animation-delay: 16s;
+        }
+
+        .text-container4 {
+            animation-delay: 20s;
+        }
+        .text-container5 {
+            animation-delay: 24s;
+        }
+
+
+
+        @keyframes kepek {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            10% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+
+            30% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+
+            40% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes szoveg {
+
+            0%
+            {
+                opacity: 0;
+            }
+            17% {
+                opacity: 1;
+            }
+
+            34%
+            {
+                opacity: 0;
+            }
+            51% {
+                opacity: 1;
+            }
+
+            68% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+        <div class="text-container">Hunor</div>
+        <div class="text-container1">Csongor</div>
+        <div class="text-container2">Tomi</div>
+        <div class="text-container3">Dani</div>
+        <div class="text-container4">Peti</div>
+        <div class="text-container5">Oliver</div>
+
+    <div class="animation-container">
+        <div class="kep">
+            <img src="galeria/kep1.jpg" alt="Image 1">
+            <img src="galeria/kep2.jpg" alt="Image 2">
+        </div>
+        <div class="kep">
+            <img src="galeria/kep3.jpg" alt="Image 3">
+            <img src="galeria/kep4.jpg" alt="Image 4">
+        </div>
+        <div class="kep">
+            <img src="galeria/kep5.jpg" alt="Image 5">
+            <img src="galeria/kep6.jpg" alt="Image 6">
+        </div>
+    </div>
+</body>
+
+</html>

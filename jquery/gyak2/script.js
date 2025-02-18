@@ -5,7 +5,7 @@ $.ajax({
         console.log(data);
         data.forEach(product => {
             console.log(product);
-            let kartya = termekKartya(product.title, product.image, product.description);
+            let kartya = termekKartya(product.id,product.title, product.image, product.description);
             $("#termekLista").append(kartya);
         });
     }
@@ -13,18 +13,35 @@ $.ajax({
 
 function termekKartya(nev,kepUrl,leiras) {
     let kartya = jQuery("<div>");
-    kartya.prop("calss","card");
+    kartya.prop("class","card");
     kartya.addClass("col-3");
+    kartya.on("click", function(){togglePopup()
+    
+    $.ajax({
+        url: "https://fakestoreapi.com/products/id",
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            data.forEach(product => {
+                console.log(product);
+                let kartya = termekKartya(product.title, product.image, product.description);
+                $("#termekLista").append(kartya);
+            });
+        }
+    })
+});
     let kep = jQuery("<img>");
     kep.prop("src", kepUrl);
     kep.prop("class", "card-img-top");
     kep.prop("alt", nev);
 
+
     let cardBody = jQuery("<div>");
     cardBody.prop("class", "card-body");
 
     let cardTitle = jQuery("<h5>");
-    cardTitle = jQuery("card-title");
+    cardTitle.prop("card-title");
+    cardTitle.text(nev);
 
     let cardText = jQuery("<p>");
     cardText.prop("class", "card-text");
@@ -36,6 +53,11 @@ function termekKartya(nev,kepUrl,leiras) {
     kartya.append(kep);
     kartya.append(cardBody);
 
-    return kartya
+    return kartya;
 
+}
+
+
+function togglePopup() {
+    $(".content").toggle();
 }
