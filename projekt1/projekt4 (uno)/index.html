@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        #kartya {
+            width: 100px;
+            height: 150px;
+            background-color: red;
+            border-radius: 8px;
+        }
+
+        #ovalis {
+            height: 60px;
+            width: 135px;
+            background-color: white;
+            border-radius: 49%;
+            transform: rotate(-50deg);
+            margin: auto;
+            position: relative;
+            top: 30%;
+            right: 17.5%;
+        }
+    </style>
+
+</head>
+
+
+
+<form action="" method="get" id="menu">
+    <div id="szabaly1">
+        <label for="jatekosokSzama">Hányan szeretnétek játszani?</label><br />
+        <input type="range" id="jatekosokSzama" max="4" min="2" value="2" />
+        <p id="demo"></p>
+    </div>
+
+</form>
+<button id="done" onclick="inditas0()">Kész</button>
+<img src="profil.png" alt="" id="profil">
+
+<body onload="csinal()">
+
+    <script>
+        function csinal() {
+
+            let kartya = document.createElement("div");
+            kartya.setAttribute("id", "kartya");
+
+            let ovalis = document.createElement("div");
+            ovalis.setAttribute("id", "ovalis");
+
+            kartya.appendChild(ovalis);
+            document.body.appendChild(kartya);
+
+
+            let szin = [0, 1, 2, 3];
+            let szamok = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            let blankKartya = document.createElement("div")
+            let kartyaHatter = document.createElement("div")
+            kartyaHatter.setAttribute("id", "kartyaHatter")
+            blankKartya.setAttribute("id", "blankKartya")
+
+            let randomSzam = Math.floor(Math.random() * szamok.length);
+            let randomSzin = Math.floor(Math.random() * szin.length);
+            if (randomSzin == 0) {
+                blankKartya.style.backgroundColor = "#A52A2A";
+
+            }
+            else if (randomSzin == 1) {
+                blankKartya.style.backgroundColor = "#228B22";
+            }
+            else if (randomSzin == 2) {
+                blankKartya.style.backgroundColor = "#0047AB";
+            }
+            else if (randomSzin == 3) {
+                blankKartya.style.backgroundColor = "#FDDA0D";
+            }
+            kartyaHatter.appendChild(blankKartya)
+            blankKartya.innerHTML = randomSzam;
+            document.body.appendChild(blankKartya);
+
+            //console.log("sdsd")
+        }
+
+
+
+
+
+        
+        let rakodoPlatform = document.createElement("div")
+        rakodoPlatform.setAttribute("id", "rakodoPlatform")
+
+        document.body.appendChild(rakodoPlatform)
+
+        var slider = document.getElementById("jatekosokSzama");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+
+
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
