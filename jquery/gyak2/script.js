@@ -5,31 +5,18 @@ $.ajax({
         console.log(data);
         data.forEach(product => {
             console.log(product);
-            let kartya = termekKartya(product.id,product.title, product.image, product.description);
+            let kartya = termekKartya(product.id, product.title, product.image, product.description);
             $("#termekLista").append(kartya);
         });
     }
 });
 
-function termekKartya(nev,kepUrl,leiras) {
+function termekKartya(nev,cim,kepUrl,leiras) {
     let kartya = jQuery("<div>");
     kartya.prop("class","card");
     kartya.addClass("col-3");
-    kartya.on("click", function(){togglePopup()
     
-    $.ajax({
-        url: "https://fakestoreapi.com/products/id",
-        dataType: "json",
-        success: function (data) {
-            console.log(data);
-            data.forEach(product => {
-                console.log(product);
-                let kartya = termekKartya(product.title, product.image, product.description);
-                $("#termekLista").append(kartya);
-            });
-        }
-    })
-});
+
     let kep = jQuery("<img>");
     kep.prop("src", kepUrl);
     kep.prop("class", "card-img-top");
@@ -55,9 +42,10 @@ function termekKartya(nev,kepUrl,leiras) {
 
     return kartya;
 
-}
+};
 
 
 function togglePopup() {
     $(".content").toggle();
 }
+    

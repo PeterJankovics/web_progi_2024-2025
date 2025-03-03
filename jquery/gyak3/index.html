@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <title>webshop</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .card-img-top{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body onload="keszit()">
+
+
+    <script>
+
+
+        function keszit() {
+            let card = jQuery("<div>");
+            card.addClass("card");
+            card.css("width", "18rem");
+            card.attr("id", "card");
+
+            let img = jQuery("<img>");
+            img.addClass("card-img-top");
+            img.attr("alt", "Card image");
+            img.attr("id", "img");
+
+            let title = jQuery("<h3>");
+            title.addClass("title");
+            title.attr("id", "title");
+
+            let email = jQuery("<p>");
+            email.addClass("email");
+            email.attr("id", "email");
+            
+
+
+            card.append(img);
+            card.append(title);
+            card.append(email);
+            $("body").append(card);
+
+
+        }
+
+
+
+        $.ajax({
+            url: 'https://randomuser.me/api/',
+            dataType: 'json',
+            success: function (data) {
+                const adat = data.results[0];
+                console.log(data.results[0]);
+                $("#img").attr("src", adat.picture.large);
+                $("#title").html(adat.name.title + " " + adat.name.first + " " + adat.name.last + " (" + adat.dob.age + ")");
+                $("#email").html(adat.email);
+ 
+            }
+        });
+    </script>
+
+</body>
+
+</html>
